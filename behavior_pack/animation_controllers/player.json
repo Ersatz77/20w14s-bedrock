@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.dash": {
+            "initial_state": "idle",
+            "states": {
+                "idle": {
+                    "transitions": [
+                        { "jump_one": "q.is_jumping" }
+                    ]
+                },
+                "jump_one": {
+                    "transitions": [
+                        { "idle": "q.is_on_ground" },
+                        { "released_jump_key": "!q.is_jumping" }
+                    ]
+                },
+                "released_jump_key": {
+                    "transitions": [
+                        { "idle": "q.is_on_ground" },
+                        { "launch": "q.is_sneaking" }
+                    ]
+                },
+                "launch": {
+                    "on_entry": [
+                        "/summon test:launcher ~ ~-0.25 ~ test:dash",
+                        "/effect @s speed 3 1 true"
+                    ],
+                    "transitions": [
+                        { "cooldown": "1" }
+                    ]
+                },
+                "cooldown": {
+                    "on_entry": [
+                        "/playsound note.bit @s ~ ~ ~ 1 0.35",
+                        "v.dash_cooldown = q.time_stamp + 15;"
+                    ],
+                    "on_exit": [
+                        "/playsound note.bit @s ~ ~ ~ 1 1"
+                    ],
+                    "transitions": [
+                        { "idle": "q.is_on_ground && q.time_stamp >= v.dash_cooldown" }
+                    ]
+                }
+            }
+        }
+    }
+}
