@@ -1,0 +1,14 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.launcher.idle": {
+            "animation_length": 0.05,
+            "loop": true,
+            "timeline": {
+                "0.0": [
+                    "/particle minecraft:basic_flame_particle ~ ~ ~"
+                ]
+            }
+        }
+    }
+}

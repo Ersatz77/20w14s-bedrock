@@ -1,0 +1,64 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "test:launcher",
+            "is_summonable": true,
+            "is_spawnable": false,
+            "is_experimental": false,
+            "animations": {
+                "idle": "animation.launcher.idle"
+            },
+            "scripts": {
+                "animate": [
+                    "idle"
+                ]
+            }
+        },
+        "component_groups": {
+            "dash": {
+                "minecraft:behavior.knockback_roar": {
+                    "attack_time": 0.05,
+                    "cooldown_time": 10,
+                    "duration": 0.05,
+                    "knockback_damage": 0,
+                    "knockback_range": 1,
+                    "knockback_horizontal_strength": 4,
+                    "on_roar_end": {
+                        "event": "test:remove",
+                        "target": "self"
+                    }
+                }
+            },
+            "remove": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            }
+        },
+        "events": {
+            "test:remove": {
+                "add": {
+                    "component_groups": [
+                        "remove"
+                    ]
+                }
+            },
+            "test:dash": {
+                "add": {
+                    "component_groups": [
+                        "dash"
+                    ]
+                }
+            }
+        }
+    }
+}
