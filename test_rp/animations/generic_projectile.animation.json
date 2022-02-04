@@ -9,6 +9,16 @@
 					"rotation": ["query.camera_rotation(0)", "query.camera_rotation(1)", 0]
 				}
 			}
+		},
+		"animation.generic_projectile.shoot_particle": {
+			"loop": false,
+			"animation_length": 0.05,
+			"particle_effects": {
+				"0.025": {
+					"locator": "center",
+					"effect": "shoot_particle"
+				}
+			}
 		}
 	}
 }

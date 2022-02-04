@@ -1,0 +1,12 @@
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "test.melon_uzi.shoot": {
+            "category": "player",
+            "sounds": [
+                { "name": "sounds/items/melon_uzi/shoot_1", "pitch": 2 },
+                { "name": "sounds/items/melon_uzi/shoot_2", "pitch": 2 }
+            ]
+        }
+    }
+}

@@ -12,13 +12,18 @@
             "materials": {
                 "default": "entity_alphatest"
             },
+            "particle_effects": {
+                "shoot_particle": "test:melon_seed_shoot"
+            },
             "animations": {
                 "face_camera": "animation.generic_projectile.face_camera",
+                "shoot_particle": "animation.generic_projectile.shoot_particle",
                 "display": "animation.melon_seed.display"
             },
             "scripts": {
                 "animate": [
                     "face_camera",
+                    "shoot_particle",
                     "display"
                 ]
             },

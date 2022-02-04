@@ -16,7 +16,7 @@
             }
         },
         "component_groups": {
-            "dash": {
+            "test:dash": {
                 "minecraft:behavior.knockback_roar": {
                     "attack_time": 0.05,
                     "cooldown_time": 10,
@@ -30,7 +30,7 @@
                     }
                 }
             },
-            "remove": {
+            "test:remove": {
                 "minecraft:instant_despawn": {}
             }
         },
@@ -48,14 +48,14 @@
             "test:remove": {
                 "add": {
                     "component_groups": [
-                        "remove"
+                        "test:remove"
                     ]
                 }
             },
             "test:dash": {
                 "add": {
                     "component_groups": [
-                        "dash"
+                        "test:dash"
                     ]
                 }
             }
