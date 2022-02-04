@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "test:melon_uzi",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "melon_uzi",
+            "minecraft:render_offsets": "tools"
+        }
+    }
+}

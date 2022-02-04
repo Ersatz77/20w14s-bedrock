@@ -1,0 +1,14 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.generic_projectile.face_camera": {
+			"loop": true,
+			"animation_length": 0.05,
+			"bones": {
+				"root": {
+					"rotation": ["query.camera_rotation(0)", "query.camera_rotation(1)", 0]
+				}
+			}
+		}
+	}
+}

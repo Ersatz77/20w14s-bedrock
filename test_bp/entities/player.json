@@ -22,7 +22,7 @@
                 "minecraft:spawn_entity": {
                     "entities": [
                         {
-                            "spawn_entity": "minecraft:snowball",
+                            "spawn_entity": "test:melon_seed",
                             "single_use": true,
                             "min_wait_time": 0,
                             "max_wait_time": 0,

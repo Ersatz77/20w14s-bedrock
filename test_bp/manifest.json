@@ -28,7 +28,8 @@
     ],
     "dependencies": [
         {
-            "uuid": "8a41bab7-59c6-4e2d-9361-cc16ac56c9e0",
+            // Test RP
+            "uuid": "60264d54-8d08-405c-aace-ad137a5abe24",
             "version": [
                 1,
                 0,
