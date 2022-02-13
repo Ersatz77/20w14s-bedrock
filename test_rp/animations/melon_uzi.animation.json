@@ -4,6 +4,18 @@
         "animation.melon_uzi.thirdperson_main_hand": {
             "loop": true,
             "bones": {
+                "root": {
+                    "rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "position": [
+                        0,
+                        13,
+                        -3
+                    ]
+                },
                 "root_x": {
                     "rotation": [
                         -58.75,
@@ -34,7 +46,12 @@
                         0,
                         0
                     ]
-                },
+                }
+            }
+        },
+        "animation.melon_uzi.thirdperson_off_hand": {
+            "loop": true,
+            "bones": {
                 "root": {
                     "rotation": [
                         90,
@@ -46,12 +63,7 @@
                         13,
                         -3
                     ]
-                }
-            }
-        },
-        "animation.melon_uzi.thirdperson_off_hand": {
-            "loop": true,
-            "bones": {
+                },
                 "root_x": {
                     "rotation": [
                         -58.75,
@@ -81,18 +93,6 @@
                         0,
                         0,
                         0
-                    ]
-                },
-                "root": {
-                    "rotation": [
-                        90,
-                        0,
-                        0
-                    ],
-                    "position": [
-                        0,
-                        13,
-                        -3
                     ]
                 }
             }

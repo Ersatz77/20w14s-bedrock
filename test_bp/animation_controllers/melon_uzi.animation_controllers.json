@@ -6,7 +6,7 @@
             "states": {
                 "idle": {
                     "transitions": [
-                        { "shooting": "q.get_equipped_item_name('main_hand') == 'melon_uzi' && q.is_using_item" }
+                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', 'test:melon_uzi') && q.is_using_item" }
                     ]
                 },
                 "shooting": {
@@ -23,7 +23,7 @@
                         "v.delay = q.time_stamp + 5;"
                     ],
                     "transitions": [
-                        { "idle": "q.get_equipped_item_name('main_hand') != 'melon_uzi' || !q.is_using_item" },
+                        { "idle": "q.is_item_name_any('slot.weapon.mainhand', 'test:melon_uzi') || !q.is_using_item" },
                         { "shooting": "q.time_stamp >= v.delay"}
                     ]
                 }

@@ -43,6 +43,26 @@
                     ]
                 }
             }
+        },
+        "controller.animation.hurt_by_phantom": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "hurt": "q.is_stunned" }
+                    ]
+                },
+                "hurt": {
+                    "on_entry": [
+                        "/playsound test.mob.player.jeb_ouch @s ~ ~ ~ 1",
+                        "/structure load how_to_sleep ~ ~ ~",
+                        "/tellraw @s {\"rawtext\":[{\"text\":\"§b[Jeb] Hey kids, Jens 'Jeb' Bergensten here! Make sure to get plenty of sleep to stay healthy, and eat a balanced breakfast, the building blocks of a healthy lifestyle! Have fun and keep crafting! Jeb out\"}]}"
+                    ],
+                    "transitions": [
+                        { "default": "(1.0)" }
+                    ]
+                }
+            }
         }
     }
 }

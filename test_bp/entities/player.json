@@ -8,16 +8,29 @@
             "is_experimental": false,
             "animations": {
                 "dash": "controller.animation.dash",
+                "hurt_by_phantom": "controller.animation.hurt_by_phantom",
                 "melon_uzi": "controller.animation.melon_uzi"
             },
             "scripts": {
                 "animate": [
                     "dash",
+                    "hurt_by_phantom",
                     "melon_uzi"
                 ]
             }
         },
         "component_groups": {
+            "test:hurt_by_phantom": {
+                "minecraft:is_stunned": {},
+                "minecraft:timer": {
+                    "time": 0.0,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "test:reset_hurt_by_phantom",
+                        "target": "self"
+                    }
+                }
+            },
             "test:shoot_melon_uzi": {
                 "minecraft:spawn_entity": {
                     "entities": [
@@ -108,6 +121,23 @@
                         },
                         "cause": "lava",
                         "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "entity_attack",
+                        "deals_damage": true,
+                        "on_damage": {
+                            "filters": {
+                                "all_of": [
+                                    { "test": "is_family", "subject": "other", "operator": "==", "value": "phantom" }
+                                ]
+                            },
+                            "target": "self",
+                            "event": "test:on_hurt_by_phantom"
+                        }
                     }
                 ]
             },
@@ -229,6 +259,20 @@
                 "remove": {
                     "component_groups": [
                         "minecraft:raid_trigger"
+                    ]
+                }
+            },
+            "test:on_hurt_by_phantom": {
+                "add": {
+                    "component_groups": [
+                        "test:hurt_by_phantom"
+                    ]
+                }
+            },
+            "test:reset_hurt_by_phantom": {
+                "remove": {
+                    "component_groups": [
+                        "test:hurt_by_phantom"
                     ]
                 }
             },

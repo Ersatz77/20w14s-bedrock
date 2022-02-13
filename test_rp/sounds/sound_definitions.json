@@ -1,6 +1,18 @@
 {
     "format_version": "1.14.0",
     "sound_definitions": {
+        "mob.phantom.swoop": {
+            "category": "hostile",
+            "sounds": [
+                { "name": "sounds/mob/phantom/jeb_explain_phantom", "is3D": false }
+            ]
+        },
+        "test.mob.player.jeb_ouch": {
+            "category": "player",
+            "sounds": [
+                { "name": "sounds/mob/player/jeb_ouch" }
+            ]
+        },
         "test.melon_uzi.shoot": {
             "category": "player",
             "sounds": [

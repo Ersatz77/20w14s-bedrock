@@ -12,9 +12,9 @@
 		},
 		"animation.generic_projectile.shoot_particle": {
 			"loop": false,
-			"animation_length": 0.05,
+			"animation_length": 1.0,
 			"particle_effects": {
-				"0.025": {
+				"0.125": {
 					"locator": "center",
 					"effect": "shoot_particle"
 				}
