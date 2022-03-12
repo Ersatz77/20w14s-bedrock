@@ -9,13 +9,22 @@
             "animations": {
                 "dash": "controller.animation.dash",
                 "hurt_by_phantom": "controller.animation.hurt_by_phantom",
-                "melon_uzi": "controller.animation.melon_uzi"
+                "melon_uzi": "controller.animation.melon_uzi",
+                "running_shoes_controller": "controller.animation.running_shoes",
+                "running_level_1": "animation.running_shoes.level_1",
+                "running_level_2": "animation.running_shoes.level_2",
+                "running_level_3": "animation.running_shoes.level_3",
+                "running_level_4": "animation.running_shoes.level_4",
+                "running_level_5": "animation.running_shoes.level_5",
+                "test": "controller.animation.test"
             },
             "scripts": {
                 "animate": [
                     "dash",
                     "hurt_by_phantom",
-                    "melon_uzi"
+                    "melon_uzi",
+                    "running_shoes_controller",
+                    "test"
                 ]
             }
         },

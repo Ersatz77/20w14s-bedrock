@@ -1,0 +1,85 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.running_shoes": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§f❱❱ §7┃ §f❱❱ §7┃ §f❱❱ §7┃ §f❱❱ §7┃ §f❱❱\"}]}"
+                    ],
+                    "transitions": [
+                        { "level_1": "q.is_sprinting && q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                },
+                "level_1": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§b❱❱ §7┃ §f❱❱ §7┃ §f❱❱ §7┃ §f❱❱ §7┃ §f❱❱\"}]}",
+                        "v.next_state_delay = q.life_time + 3;"
+                    ],
+                    "animations": [
+                        "running_level_1"
+                    ],
+                    "transitions": [
+                        { "level_2": "v.next_state_delay <= q.life_time && q.is_sprinting" },
+                        { "default": "(v.next_state_delay <= q.life_time && !q.is_sprinting) || !q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                },
+                "level_2": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§b❱❱ §7┃ §b❱❱ §7┃ §f❱❱ §7┃ §f❱❱ §7┃ §f❱❱\"}]}",
+                        "v.next_state_delay = q.life_time + 3;"
+                    ],
+                    "animations": [
+                        "running_level_2"
+                    ],
+                    "transitions": [
+                        { "level_3": "v.next_state_delay <= q.life_time && q.is_sprinting" },
+                        { "level_1": "v.next_state_delay <= q.life_time && !q.is_sprinting" },
+                        { "default": "!q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                },
+                "level_3": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§b❱❱ §7┃ §b❱❱ §7┃ §b❱❱ §7┃ §f❱❱ §7┃ §f❱❱\"}]}",
+                        "v.next_state_delay = q.life_time + 3;"
+                    ],
+                    "animations": [
+                        "running_level_3"
+                    ],
+                    "transitions": [
+                        { "level_4": "v.next_state_delay <= q.life_time && q.is_sprinting" },
+                        { "level_2": "v.next_state_delay <= q.life_time && !q.is_sprinting" },
+                        { "default": "!q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                },
+                "level_4": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§b❱❱ §7┃ §b❱❱ §7┃ §b❱❱ §7┃ §b❱❱ §7┃ §f❱❱\"}]}",
+                        "v.next_state_delay = q.life_time + 3;"
+                    ],
+                    "animations": [
+                        "running_level_4"
+                    ],
+                    "transitions": [
+                        { "level_5": "v.next_state_delay <= q.life_time && q.is_sprinting" },
+                        { "level_3": "v.next_state_delay <= q.life_time && !q.is_sprinting" },
+                        { "default": "!q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                },
+                "level_5": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\": \"§b❱❱ §7┃ §b❱❱ §7┃ §b❱❱ §7┃ §b❱❱ §7┃ §b❱❱\"}]}"
+                    ],
+                    "animations": [
+                        "running_level_5"
+                    ],
+                    "transitions": [
+                        { "level_4": "!q.is_sprinting" },
+                        { "default": "!q.is_item_name_any('slot.armor.feet', 'minecraft:netherite_boots')" }
+                    ]
+                }
+            }
+        }
+    }
+}
