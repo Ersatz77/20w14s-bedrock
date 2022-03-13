@@ -1,0 +1,94 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "test:grappling_hook_seat",
+            "is_summonable": true,
+            "is_spawnable": false,
+            "is_experimental": false,
+            "animations": {
+                "init": "animation.grappling_hook.init",
+                "check_hook": "animation.grappling_hook.check_for_hook",
+                "test": "animation.launcher.idle"
+            },
+            "scripts": {
+                "animate": [
+                    { "init": "q.is_powered" },
+                    "check_hook",
+                    "test"
+                ]
+            }
+        },
+        "component_groups": {
+            "test:init": {
+                "minecraft:is_charged": {}
+            },
+            "test:remove": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "grappling_hook"
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0.25,
+                "width": 0.25
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:rideable": {
+                "family_types": [
+                    "player"
+                ],
+                "pull_in_entities": false,
+                "rider_can_interact": false,
+                "crouching_skip_interact": false,
+                "seat_count": 1,
+                "seats":[
+                    {
+                        "position": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                ]
+            },
+            "minecraft:environment_sensor": {
+                "triggers": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                { "test": "has_tag", "subject": "self", "operator": "==", "value": "Is_Retracting"},
+                                { "test": "rider_count", "subject": "self", "operator": "==", "value": 0 }
+                            ]
+                        },
+                        "event": "test:remove",
+                        "target": "self"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "test:init": {
+                "add": {
+                    "component_groups": [
+                        "test:init"
+                    ]
+                }
+            },
+            "test:remove": {
+                "add": {
+                    "component_groups": [
+                        "test:remove"
+                    ]
+                }
+            }
+        }
+    }
+}

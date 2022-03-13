@@ -9,6 +9,11 @@
             "is_experimental": false
         },
         "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "projectile"
+                ]
+            },
             "minecraft:collision_box": {
                 "height": 0.125,
                 "width": 0.125

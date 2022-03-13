@@ -4,6 +4,9 @@
     "texture_data": {
         "melon_uzi": {
             "textures": "textures/items/melon_uzi"
+        },
+        "grappling_hook": {
+            "textures": "textures/items/crossbow_standby"
         }
     }
 }

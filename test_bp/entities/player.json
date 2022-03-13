@@ -9,22 +9,22 @@
             "animations": {
                 "dash": "controller.animation.dash",
                 "hurt_by_phantom": "controller.animation.hurt_by_phantom",
-                "melon_uzi": "controller.animation.melon_uzi",
+                "melon_uzi": "controller.animation.melon_uzi.use",
+                "grappling_hook": "controller.animation.grappling_hook.use",
                 "running_shoes_controller": "controller.animation.running_shoes",
                 "running_level_1": "animation.running_shoes.level_1",
                 "running_level_2": "animation.running_shoes.level_2",
                 "running_level_3": "animation.running_shoes.level_3",
                 "running_level_4": "animation.running_shoes.level_4",
-                "running_level_5": "animation.running_shoes.level_5",
-                "test": "controller.animation.test"
+                "running_level_5": "animation.running_shoes.level_5"
             },
             "scripts": {
                 "animate": [
                     "dash",
                     "hurt_by_phantom",
                     "melon_uzi",
-                    "running_shoes_controller",
-                    "test"
+                    "grappling_hook",
+                    "running_shoes_controller"
                 ]
             }
         },
@@ -56,7 +56,30 @@
                     "looping": false,
                     "time": 0.0,
                     "time_down_event": {
-                        "event": "test:reset_shooting",
+                        "event": "test:reset_melon_uzi",
+                        "target": "self"
+                    }
+                }
+            },
+            "test:shoot_grappling_hook": {
+                "minecraft:is_charged": {},
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "spawn_entity": "test:grappling_hook",
+                            "spawn_event": "test:init",
+                            "single_use": true,
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "num_to_spawn": 1
+                        }
+                    ]
+                },
+                "minecraft:timer": {
+                    "looping": false,
+                    "time": 0.5,
+                    "time_down_event": {
+                        "event": "test:reset_grappling_hook",
                         "target": "self"
                     }
                 }
@@ -285,17 +308,31 @@
                     ]
                 }
             },
-            "test:reset_shooting": {
+            "test:on_shoot_melon_uzi": {
+                "add": {
+                    "component_groups": [
+                        "test:shoot_melon_uzi"
+                    ]
+                }
+            },
+            "test:reset_melon_uzi": {
                 "remove": {
                     "component_groups": [
                         "test:shoot_melon_uzi"
                     ]
                 }
             },
-            "test:on_shoot_melon_uzi": {
+            "test:on_shoot_grappling_hook": {
                 "add": {
                     "component_groups": [
-                        "test:shoot_melon_uzi"
+                        "test:shoot_grappling_hook"
+                    ]
+                }
+            },
+            "test:reset_grappling_hook": {
+                "remove": {
+                    "component_groups": [
+                        "test:shoot_grappling_hook"
                     ]
                 }
             }

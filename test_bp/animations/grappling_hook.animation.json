@@ -1,0 +1,39 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.grappling_hook.init": {
+            "animation_length": 0.05,
+            "loop": false,
+            "timeline": {
+                "0.0": [
+                    "/execute @s[tag=!Initialized] ~ ~ ~ function mechanics/grappling_hook/init"
+                ]
+            }
+        },
+        "animation.grappling_hook.start_retracting": {
+            "animation_length": 0.05,
+            "loop": false,
+            "timeline": {
+                "0.0": "/execute @s[tag=!Is_Retracting] ~ ~ ~ function mechanics/grappling_hook/start_retracting"
+            }
+        },
+        "animation.grappling_hook.check_for_dummy_and_seat": {
+            "animation_length": 0.5,
+            "loop": true,
+            "timeline": {
+                "0.1": [
+                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/check_for_dummy_and_seat"
+                ]
+            }
+        },
+        "animation.grappling_hook.check_for_hook": {
+            "animation_length": 0.5,
+            "loop": true,
+            "timeline": {
+                "0.1": [
+                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/check_for_hook"
+                ]
+            }
+        }
+    }
+}

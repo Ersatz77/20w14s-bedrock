@@ -1,0 +1,162 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "test:grappling_hook",
+            "runtime_identifier": "minecraft:snowball",
+            "is_summonable": true,
+            "is_spawnable": false,
+            "is_experimental": false,
+            "animations": {
+                "init": "animation.grappling_hook.init",
+                "start_retracting": "animation.grappling_hook.start_retracting",
+                "check_dummy_and_seat": "animation.grappling_hook.check_for_dummy_and_seat",
+                "test": "animation.launcher.idle"
+            },
+            "scripts": {
+                "animate": [
+                    { "init": "q.is_powered" },
+                    { "start_retracting": "q.is_stunned" },
+                    "check_dummy_and_seat",
+                    "test"
+                ]
+            }
+        },
+        "component_groups": {
+            "test:init": {
+                "minecraft:is_charged": {}
+            },
+            "test:spawn_dummy": {
+                "minecraft:spawn_entity": {
+                    "entities":[
+                        {
+                            "spawn_entity": "test:grappling_hook_dummy",
+                            "spawn_event": "test:init",
+                            "single_use": true,
+                            "should_leash": true,
+                            "num_to_spawn": 1,
+                            "min_wait_time": 0,
+                            "max_wait_time": 0
+                            
+                        }
+                    ]
+                },
+                "minecraft:timer": {
+                    "time": 60.0,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "test:remove",
+                        "target": "self"
+                    }
+                }
+            },
+            "test:retracting": {
+                "minecraft:is_stunned": {}
+            },
+            "test:remove": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "projectile", "grappling_hook"
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0.25,
+                "width": 0.25
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:projectile": {
+                "power": 2.0,
+                "gravity": 0.05,
+                "inertia": 0.99,
+                "should_bounce": false,
+                "on_hit": {
+                    "stick_in_ground": {
+                        "shake_time": 0
+                    },
+                    "particle_on_hit": {
+                        "particle_type": "smoke",
+                        "num_particles": 3
+                    },
+                    "definition_event": {
+                        "affect_projectile": true,
+                        "event_trigger": {
+                            "event": "test:start_retracting",
+                            "target": "self"
+                        }
+                    }
+                }
+            },
+            "minecraft:environment_sensor": {
+                "triggers": [
+                    {
+                        "filters": {
+                            "any_of": [
+                                {
+                                    "test": "on_ground",
+                                    "subject": "self",
+                                    "operator": "==",
+                                    "value": true
+                                },
+                                {
+                                    "test": "is_moving",
+                                    "subject": "self",
+                                    "operator": "==",
+                                    "value": false
+                                }
+                            ]
+                        },
+                        "event": "test:start_retracting",
+                        "target": "self"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "test:init": {
+                "add": {
+                    "component_groups": [
+                        "test:init",
+                        "test:spawn_dummy"
+                    ]
+                }
+            },
+            "test:reset_init": {
+                "remove": {
+                    "component_groups": [
+                        "test:init"
+                    ]
+                }
+            },
+            "test:start_retracting": {
+                "add": {
+                    "component_groups": [
+                        "test:retracting"
+                    ]
+                }
+            },
+            "test:reset_retracting": {
+                "remove": {
+                    "component_groups": [
+                        "test:retracting"
+                    ]
+                }
+            },
+            "test:remove": {
+                "add": {
+                    "component_groups": [
+                        "test:remove"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.melon_uzi": {
+        "controller.animation.melon_uzi.use": {
             "initial_state": "idle",
             "states": {
                 "idle": {

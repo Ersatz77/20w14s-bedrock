@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.grappling_hook.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', 'test:grappling_hook') && q.is_using_item" }
+                    ]
+                },
+                "shooting": {
+                    "on_entry": [
+                        "/scoreboard players operation Player_ID Grappling_Hook = @s Player_ID",
+                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/remove_with_existing_id",
+                        "@s test:on_shoot_grappling_hook"
+                    ],
+                    "transitions": [
+                        { "default": "!q.is_powered" }
+                    ]
+                }
+            }
+        }
+    }
+}
