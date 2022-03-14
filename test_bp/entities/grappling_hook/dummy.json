@@ -7,15 +7,13 @@
             "is_spawnable": false,
             "is_experimental": false,
             "animations": {
-                "init": "animation.grappling_hook.init",
-                "check_hook": "animation.grappling_hook.check_for_hook",
-                "test": "animation.launcher.idle"
+                "init_controller": "controller.animation.grappling_hook.init",
+                "check_hook": "animation.grappling_hook.check_for_hook"
             },
             "scripts": {
                 "animate": [
-                    { "init": "q.is_powered" },
-                    "check_hook",
-                    "test"
+                    "init_controller",
+                    "check_hook"
                 ]
             }
         },
@@ -42,8 +40,8 @@
                 ]
             },
             "minecraft:collision_box": {
-                "height": 2,
-                "width": 1
+                "height": 1.8,
+                "width": 0.5
             },
             "minecraft:physics": {
                 "has_collision": true,
@@ -70,7 +68,7 @@
             "minecraft:leashable": {
                 "can_be_stolen": false,
                 "soft_distance": 0,
-				"hard_distance": 1,
+				"hard_distance": 0,
 				"max_distance": 64,
                 "on_unleash": {
                     "event": "test:remove",

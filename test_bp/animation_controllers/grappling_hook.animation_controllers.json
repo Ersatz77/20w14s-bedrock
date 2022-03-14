@@ -1,6 +1,7 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
+        // Runs on the player
         "controller.animation.grappling_hook.use": {
             "initial_state": "default",
             "states": {
@@ -17,6 +18,48 @@
                     ],
                     "transitions": [
                         { "default": "!q.is_powered" }
+                    ]
+                }
+            }
+        },
+
+        // Initializes all grappling hook entities
+        "controller.animation.grappling_hook.init": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "init": "q.is_powered" }
+                    ]
+                },
+                "init": {
+                    "on_entry": [
+                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/init",
+                        "@s test:reset_init"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                }
+            }
+        },
+
+        // Runs on the hook entity
+        "controller.animation.grappling_hook.detect_hit": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "hit": "q.is_stunned" }
+                    ]
+                },
+                "hit": {
+                    "on_entry": [
+                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/start_retracting",
+                        "@s test:reset_retracting"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
                     ]
                 }
             }

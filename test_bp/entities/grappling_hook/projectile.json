@@ -8,17 +8,15 @@
             "is_spawnable": false,
             "is_experimental": false,
             "animations": {
-                "init": "animation.grappling_hook.init",
-                "start_retracting": "animation.grappling_hook.start_retracting",
-                "check_dummy_and_seat": "animation.grappling_hook.check_for_dummy_and_seat",
-                "test": "animation.launcher.idle"
+                "init_controller": "controller.animation.grappling_hook.init",
+                "hit_controller": "controller.animation.grappling_hook.detect_hit",
+                "check_dummy_and_seat": "animation.grappling_hook.check_for_dummy_and_seat"
             },
             "scripts": {
                 "animate": [
-                    { "init": "q.is_powered" },
-                    { "start_retracting": "q.is_stunned" },
-                    "check_dummy_and_seat",
-                    "test"
+                    "init_controller",
+                    "hit_controller",
+                    "check_dummy_and_seat"
                 ]
             }
         },
@@ -82,42 +80,13 @@
                     "stick_in_ground": {
                         "shake_time": 0
                     },
-                    "particle_on_hit": {
-                        "particle_type": "smoke",
-                        "num_particles": 3
-                    },
                     "definition_event": {
-                        "affect_projectile": true,
                         "event_trigger": {
                             "event": "test:start_retracting",
                             "target": "self"
                         }
                     }
                 }
-            },
-            "minecraft:environment_sensor": {
-                "triggers": [
-                    {
-                        "filters": {
-                            "any_of": [
-                                {
-                                    "test": "on_ground",
-                                    "subject": "self",
-                                    "operator": "==",
-                                    "value": true
-                                },
-                                {
-                                    "test": "is_moving",
-                                    "subject": "self",
-                                    "operator": "==",
-                                    "value": false
-                                }
-                            ]
-                        },
-                        "event": "test:start_retracting",
-                        "target": "self"
-                    }
-                ]
             }
         },
         "events": {

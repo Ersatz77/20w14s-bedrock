@@ -7,15 +7,13 @@
             "is_spawnable": false,
             "is_experimental": false,
             "animations": {
-                "init": "animation.grappling_hook.init",
-                "check_hook": "animation.grappling_hook.check_for_hook",
-                "test": "animation.launcher.idle"
+                "init_controller": "controller.animation.grappling_hook.init",
+                "check_hook": "animation.grappling_hook.check_for_hook"
             },
             "scripts": {
                 "animate": [
-                    { "init": "q.is_powered" },
-                    "check_hook",
-                    "test"
+                    "init_controller",
+                    "check_hook"
                 ]
             }
         },
@@ -77,6 +75,13 @@
         "events": {
             "test:init": {
                 "add": {
+                    "component_groups": [
+                        "test:init"
+                    ]
+                }
+            },
+            "test:reset_init": {
+                "remove": {
                     "component_groups": [
                         "test:init"
                     ]

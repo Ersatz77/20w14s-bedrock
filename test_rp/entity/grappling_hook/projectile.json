@@ -1,0 +1,28 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "test:grappling_hook",
+            "geometry": {
+                "default": "geometry.grappling_hook"
+            },
+            "textures": {
+                "default": "textures/entity/projectiles/grappling_hook"
+            },
+            "materials": {
+                "default": "entity"
+            },
+            "animations": {
+                "rotation": "animation.grappling_hook.rotation"
+            },
+            "scripts": {
+                "animate": [
+                    "rotation"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.grappling_hook"
+            ]
+        }
+    }
+}

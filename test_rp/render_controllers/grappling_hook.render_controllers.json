@@ -1,0 +1,17 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.grappling_hook": {
+            "geometry": "Geometry.default",
+            "textures": [
+                "Texture.default"
+            ],
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "filter_lighting": true
+        }
+    }
+}
