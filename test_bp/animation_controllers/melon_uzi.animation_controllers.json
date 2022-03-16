@@ -11,7 +11,7 @@
                 },
                 "shooting": {
                     "on_entry": [
-                        "/playsound test.melon_uzi.shoot @s ~ ~ ~ 2",
+                        "/execute @s ~ ~ ~ playsound test.melon_uzi.shoot @s ~ ~ ~ 2",
                         "@s test:on_shoot_melon_uzi"
                     ],
                     "transitions": [

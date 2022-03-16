@@ -14,3 +14,6 @@ scoreboard players operation @e[type=test:grappling_hook_seat] CMP_Grapple_ID_3 
 tag @e[type=test:grappling_hook_dummy,scores={CMP_Grapple_ID_2=0}] add Is_Retracting
 tag @e[type=test:grappling_hook_seat,scores={CMP_Grapple_ID_3=0}] add Is_Retracting
 ride @a[scores={CMP_Grapple_ID_1=0},c=1] start_riding @e[type=test:grappling_hook_seat,tag=Is_Retracting,scores={CMP_Grapple_ID_3=0},c=1] teleport_rider until_full
+
+# Retraction sound
+playsound mob.irongolem.crack @a ~ ~ ~ 1 2.75

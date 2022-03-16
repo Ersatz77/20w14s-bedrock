@@ -31,6 +31,10 @@
                     "grappling_hook"
                 ]
             },
+            "minecraft:health": {
+                "value": 1,
+                "max": 0
+            },
             "minecraft:collision_box": {
                 "height": 0.25,
                 "width": 0.25
@@ -70,7 +74,15 @@
                         "target": "self"
                     }
                 ]
-            }
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            } 
         },
         "events": {
             "test:init": {

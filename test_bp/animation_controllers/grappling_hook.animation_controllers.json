@@ -14,6 +14,7 @@
                     "on_entry": [
                         "/scoreboard players operation Player_ID Grappling_Hook = @s Player_ID",
                         "/execute @s ~ ~ ~ function mechanics/grappling_hook/remove_with_existing_id",
+                        "/execute @s ~ ~ ~ playsound crossbow.shoot @s ~ ~ ~",
                         "@s test:on_shoot_grappling_hook"
                     ],
                     "transitions": [

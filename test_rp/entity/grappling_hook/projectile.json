@@ -10,7 +10,7 @@
                 "default": "textures/entity/projectiles/grappling_hook"
             },
             "materials": {
-                "default": "entity"
+                "default": "entity_alphatest"
             },
             "animations": {
                 "rotation": "animation.grappling_hook.rotation"

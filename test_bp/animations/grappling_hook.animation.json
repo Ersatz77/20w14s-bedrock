@@ -6,7 +6,7 @@
             "loop": true,
             "timeline": {
                 "0.25": [
-                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/check_for_dummy_and_seat"
+                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/detect/dummy_and_seat"
                 ]
             }
         },
@@ -15,7 +15,7 @@
             "loop": true,
             "timeline": {
                 "0.25": [
-                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/check_for_hook"
+                    "/execute @s ~ ~ ~ function mechanics/grappling_hook/detect/hook"
                 ]
             }
         }
