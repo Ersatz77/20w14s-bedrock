@@ -11,6 +11,7 @@
                 "hurt_by_phantom": "controller.animation.hurt_by_phantom",
                 "melon_uzi": "controller.animation.melon_uzi.use",
                 "grappling_hook": "controller.animation.grappling_hook.use",
+                "laser_pointer": "controller.animation.laser_pointer.use",
                 "running_shoes_controller": "controller.animation.running_shoes",
                 "running_level_1": "animation.running_shoes.level_1",
                 "running_level_2": "animation.running_shoes.level_2",
@@ -24,6 +25,7 @@
                     "hurt_by_phantom",
                     "melon_uzi",
                     "grappling_hook",
+                    "laser_pointer",
                     "running_shoes_controller"
                 ]
             }
@@ -62,7 +64,6 @@
                 }
             },
             "test:shoot_grappling_hook": {
-                "minecraft:is_charged": {},
                 "minecraft:spawn_entity": {
                     "entities": [
                         {
@@ -77,7 +78,7 @@
                 },
                 "minecraft:timer": {
                     "looping": false,
-                    "time": 0.5,
+                    "time": 0.0,
                     "time_down_event": {
                         "event": "test:reset_grappling_hook",
                         "target": "self"
@@ -164,7 +165,12 @@
                         "on_damage": {
                             "filters": {
                                 "all_of": [
-                                    { "test": "is_family", "subject": "other", "operator": "==", "value": "phantom" }
+                                    {
+                                        "test": "is_family",
+                                        "subject": "other",
+                                        "operator": "==",
+                                        "value": "phantom"
+                                    }
                                 ]
                             },
                             "target": "self",
@@ -241,23 +247,26 @@
             "minecraft:conditional_bandwidth_optimization": {},
             "minecraft:block_climber": {},
             "minecraft:environment_sensor": {
-                "triggers": {
-                    "filters": {
-                        "all_of": [
-                            {
-                                "test": "has_mob_effect",
-                                "subject": "self",
-                                "value": "bad_omen"
-                            },
-                            {
-                                "test": "is_in_village",
-                                "subject": "self",
-                                "value": true
-                            }
-                        ]
-                    },
-                    "event": "minecraft:trigger_raid"
-                }
+                "triggers": [
+                    {
+                        "filters": {
+                            "all_of": [
+                                {
+                                    "test": "has_mob_effect",
+                                    "subject": "self",
+                                    "value": "bad_omen"
+                                },
+                                {
+                                    "test": "is_in_village",
+                                    "subject": "self",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        "event": "minecraft:trigger_raid",
+                        "target": "self"
+                    }
+                ]
             }
         },
         "events": {

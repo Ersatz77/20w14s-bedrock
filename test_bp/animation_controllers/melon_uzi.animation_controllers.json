@@ -2,29 +2,22 @@
     "format_version": "1.10.0",
     "animation_controllers": {
         "controller.animation.melon_uzi.use": {
-            "initial_state": "idle",
+            "initial_state": "default",
             "states": {
-                "idle": {
+                "default": {
                     "transitions": [
                         { "shooting": "q.is_item_name_any('slot.weapon.mainhand', 'test:melon_uzi') && q.is_using_item" }
                     ]
                 },
                 "shooting": {
                     "on_entry": [
-                        "/execute @s ~ ~ ~ playsound test.melon_uzi.shoot @s ~ ~ ~ 2",
+                        "v.melon_uzi_cooldown = q.life_time + 0.25;",
+
+                        "/execute @s ~ ~ ~ playsound test.melon_uzi.shoot @a ~ ~ ~ 2",
                         "@s test:on_shoot_melon_uzi"
                     ],
                     "transitions": [
-                        { "delay": "(1.0)" }
-                    ]
-                },
-                "delay": {
-                    "on_entry": [
-                        "v.delay = q.time_stamp + 5;"
-                    ],
-                    "transitions": [
-                        { "idle": "q.is_item_name_any('slot.weapon.mainhand', 'test:melon_uzi') || !q.is_using_item" },
-                        { "shooting": "q.time_stamp >= v.delay"}
+                        { "default": "q.life_time >= v.melon_uzi_cooldown" }
                     ]
                 }
             }

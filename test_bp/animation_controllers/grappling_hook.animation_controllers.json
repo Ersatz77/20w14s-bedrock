@@ -6,19 +6,50 @@
             "initial_state": "default",
             "states": {
                 "default": {
+                    "on_entry": [
+                        "v.grappling_hook_cooldown = 2;",
+                        "v.grapplng_hook_reached_cooldown_ts = 0;"
+                    ],
                     "transitions": [
-                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', 'test:grappling_hook') && q.is_using_item" }
+                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', 'test:grappling_hook') && q.is_using_item" },
+                        { "cancel_shot": "q.is_item_name_any('slot.weapon.mainhand', 'test:grappling_hook') && !q.is_using_item && q.is_sneaking" }
                     ]
                 },
                 "shooting": {
                     "on_entry": [
+                        // Get the timestamp the cooldown will be reached
+                        "v.grapplng_hook_reached_cooldown_ts = q.life_time + v.grappling_hook_cooldown;",
+
+                        // Initialize and shoot grappling hook projectile
                         "/scoreboard players operation Player_ID Grappling_Hook = @s Player_ID",
-                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/remove_with_existing_id",
-                        "/execute @s ~ ~ ~ playsound crossbow.shoot @s ~ ~ ~",
+                        "/scoreboard players operation Removal_Player_ID Grappling_Hook = @s Player_ID",
+
+                        "/function utility/id/generate_2",
+                        "/scoreboard players operation Grapple_ID Grappling_Hook = Current_2 ID",
+
+                        "/function mechanics/grappling_hook/remove_with_existing_id",
+
+                        "/playsound crossbow.shoot @s ~ ~ ~",
                         "@s test:on_shoot_grappling_hook"
                     ],
                     "transitions": [
-                        { "default": "!q.is_powered" }
+                        { "cooldown": "1.0" }
+                    ]
+                },
+                "cooldown": {
+                    "transitions": [
+                        { "default": "q.life_time >= v.grapplng_hook_reached_cooldown_ts" },
+                        { "cancel_shot": "q.is_item_name_any('slot.weapon.mainhand', 'test:grappling_hook') && q.is_sneaking" }
+                    ]
+                },
+                "cancel_shot": {
+                    "on_entry": [
+                        "/scoreboard players operation Removal_Player_ID Grappling_Hook = @s Player_ID",
+                        "/function mechanics/grappling_hook/remove_with_existing_id"
+                    ],
+                    "transitions": [
+                        { "default": "q.life_time >= v.grapplng_hook_reached_cooldown_ts" },
+                        { "cooldown": "q.life_time < v.grapplng_hook_reached_cooldown_ts" }
                     ]
                 }
             }
@@ -35,7 +66,10 @@
                 },
                 "init": {
                     "on_entry": [
-                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/init",
+                        "/tag @s add Initialized",
+                        "/scoreboard players operation @s Grapple_Plyr_ID = Player_ID Grappling_Hook",
+                        "/scoreboard players operation @s Grapple_ID = Grapple_ID Grappling_Hook",
+
                         "@s test:reset_init"
                     ],
                     "transitions": [

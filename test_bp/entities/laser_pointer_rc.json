@@ -2,34 +2,12 @@
     "format_version": "1.18.0",
     "minecraft:entity": {
         "description": {
-            "identifier": "test:launcher",
+            "identifier": "test:laser_pointer_rc",
             "is_summonable": true,
             "is_spawnable": false,
-            "is_experimental": false,
-            "animations": {
-                "idle": "animation.launcher.idle"
-            },
-            "scripts": {
-                "animate": [
-                    "idle"
-                ]
-            }
+            "is_experimental": false
         },
         "component_groups": {
-            "test:dash": {
-                "minecraft:behavior.knockback_roar": {
-                    "attack_time": 0.05,
-                    "cooldown_time": 10,
-                    "duration": 0.05,
-                    "knockback_damage": 0,
-                    "knockback_range": 1,
-                    "knockback_horizontal_strength": 4,
-                    "on_roar_end": {
-                        "event": "test:remove",
-                        "target": "self"
-                    }
-                }
-            },
             "test:remove": {
                 "minecraft:instant_despawn": {}
             }
@@ -44,12 +22,34 @@
                 "value": 1,
                 "max": 0
             },
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.1
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": false
+            },
+            "minecraft:push_through": {
+                "value": 0
+            },
+            "minecraft:knockback_resistance": {
+                "value": 100.0
+            },
             "minecraft:damage_sensor": {
                 "triggers": [
                     {
                         "cause": "all",
                         "deals_damage": false
                     }
+                ]
+            },
+            "minecraft:break_blocks": {
+                "breakable_blocks": [
+                    "minecraft:glass",
+                    "minecraft:glass_pane",
+                    "minecraft:stained_glass",
+                    "minecraft:stained_glass_pane"
                 ]
             }
         },
@@ -58,13 +58,6 @@
                 "add": {
                     "component_groups": [
                         "test:remove"
-                    ]
-                }
-            },
-            "test:dash": {
-                "add": {
-                    "component_groups": [
-                        "test:dash"
                     ]
                 }
             }

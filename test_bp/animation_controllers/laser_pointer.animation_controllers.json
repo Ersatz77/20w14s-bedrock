@@ -1,0 +1,42 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.laser_pointer.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "charge": "q.is_item_name_any('slot.weapon.mainhand', 'test:laser_pointer') && q.is_using_item" }
+                    ]
+                },
+                "charge": {
+                    "on_entry": [
+                        "v.laser_pointer_delay = q.life_time + 2;",
+                        "/playsound test.laser_pointer.charge @s ~ ~ ~"
+                    ],
+                    "transitions": [
+                        { "shoot": "q.life_time >= v.laser_pointer_delay && q.is_using_item" },
+                        { "stopped_using": "!q.is_item_name_any('slot.weapon.mainhand', 'test:laser_pointer') || !q.is_using_item" }
+                    ]
+                },
+                "shoot": {
+                    "on_entry": [
+                        "/playsound test.laser_pointer.shoot @s ~ ~ ~",
+                        "/execute @s ~ ~1.62 ~ function mechanics/laser_pointer/shoot"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "stopped_using": {
+                    "on_entry": [
+                        "/stopsound @s test.laser_pointer.charge"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                }
+            }
+        }
+    }
+}

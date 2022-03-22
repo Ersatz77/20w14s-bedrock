@@ -3,12 +3,12 @@ tag @s add Is_Retracting
 
 # Find players, dummys, and seat with the same ID as the hook
 execute @a ~ ~ ~ scoreboard players operation @s CMP_Grapple_ID_1 = @s Player_ID
-execute @e[type=test:grappling_hook_dummy] ~ ~ ~ scoreboard players operation @s CMP_Grapple_ID_2 = @s Grapple_ID
-execute @e[type=test:grappling_hook_seat] ~ ~ ~ scoreboard players operation @s CMP_Grapple_ID_3 = @s Grapple_ID
+execute @e[type=test:grappling_hook_dummy] ~ ~ ~ scoreboard players operation @s CMP_Grapple_ID_2 = @s Grapple_Plyr_ID
+execute @e[type=test:grappling_hook_seat] ~ ~ ~ scoreboard players operation @s CMP_Grapple_ID_3 = @s Grapple_Plyr_ID
 
-scoreboard players operation @a CMP_Grapple_ID_1 -= @s Grapple_ID
-scoreboard players operation @e[type=test:grappling_hook_dummy] CMP_Grapple_ID_2 -= @s Grapple_ID
-scoreboard players operation @e[type=test:grappling_hook_seat] CMP_Grapple_ID_3 -= @s Grapple_ID
+scoreboard players operation @a CMP_Grapple_ID_1 -= @s Grapple_Plyr_ID
+scoreboard players operation @e[type=test:grappling_hook_dummy] CMP_Grapple_ID_2 -= @s Grapple_Plyr_ID
+scoreboard players operation @e[type=test:grappling_hook_seat] CMP_Grapple_ID_3 -= @s Grapple_Plyr_ID
 
 # Run commands on entities with matching IDs
 tag @e[type=test:grappling_hook_dummy,scores={CMP_Grapple_ID_2=0}] add Is_Retracting

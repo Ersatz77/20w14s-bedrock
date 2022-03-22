@@ -14,10 +14,22 @@
             ]
         },
         "test.melon_uzi.shoot": {
-            "category": "player",
+            "category": "ambient",
             "sounds": [
                 { "name": "sounds/items/melon_uzi/shoot_1", "pitch": 2 },
                 { "name": "sounds/items/melon_uzi/shoot_2", "pitch": 2 }
+            ]
+        },
+        "test.laser_pointer.charge": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/items/laser_pointer/charge"
+            ]
+        },
+        "test.laser_pointer.shoot": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/items/laser_pointer/shoot"
             ]
         }
     }

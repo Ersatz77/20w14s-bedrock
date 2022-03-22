@@ -1,1 +1,9 @@
+entity.test:grappling_hook.name=test:grappling_hook
+entity.test:grappling_hook_dummy.name=test:grappling_hook_dummy
+entity.test:grappling_hook_seat.name=test:grappling_hook_seat
+
 item.test:melon_uzi.name=Melon Uzi
+item.test:grappling_hook.name=Grappling Hook
+item.test:laser_pointer.name=Laser Pointer
+
+action.hint.exit.test:grappling_hook_seat=Sneak to exit
