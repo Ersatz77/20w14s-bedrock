@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "20w14s:laser_pointer",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "iron_ingot",
+            "minecraft:render_offsets": "tools"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+        "mob.phantom.swoop": {
+            "category": "hostile",
+            "sounds": [
+                { "name": "sounds/mob/phantom/jeb_explain_phantom", "is3D": false }
+            ]
+        },
+        "20w14s.mob.player.jeb_ouch": {
+            "category": "player",
+            "sounds": [
+                { "name": "sounds/mob/player/jeb_ouch" }
+            ]
+        },
+        "20w14s.melon_uzi.shoot": {
+            "category": "ambient",
+            "sounds": [
+                { "name": "sounds/items/melon_uzi/shoot_1", "pitch": 2 },
+                { "name": "sounds/items/melon_uzi/shoot_2", "pitch": 2 }
+            ]
+        },
+        "20w14s.laser_pointer.charge": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/items/laser_pointer/charge"
+            ]
+        },
+        "20w14s.laser_pointer.shoot": {
+            "category": "ambient",
+            "sounds": [
+                "sounds/items/laser_pointer/shoot"
+            ]
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "20w14s:melon_seed",
+            "runtime_identifier": "minecraft:snowball",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "projectile"
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0.125,
+                "width": 0.125
+            },
+            "minecraft:physics": {
+                "has_collision": true,
+                "has_gravity": true
+            },
+            "minecraft:projectile": {
+                "on_hit": {
+                    "remove_on_hit": {},
+                    "particle_on_hit": {
+                        "particle_type": "crit",
+                        "num_particles": 6,
+                        "on_entity_hit": true,
+                        "on_other_hit": true
+                    }
+                },
+                "power": 2,
+                "gravity": 0.05,
+                "inertia": 0.99
+            }
+        }
+    }
+}

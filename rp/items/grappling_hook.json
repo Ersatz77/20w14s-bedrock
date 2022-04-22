@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "20w14s:grappling_hook",
+            "category": "Equipment"
+        },
+        "components": {
+            "minecraft:icon": "grappling_hook",
+            "minecraft:render_offsets": "tools"
+        }
+    }
+}

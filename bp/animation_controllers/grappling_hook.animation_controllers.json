@@ -1,0 +1,100 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        // Runs on the player
+        "controller.animation.grappling_hook.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "v.grappling_hook_cooldown = 2;",
+                        "v.grapplng_hook_reached_cooldown_ts = 0;"
+                    ],
+                    "transitions": [
+                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:grappling_hook') && q.is_using_item" },
+                        { "cancel_shot": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:grappling_hook') && !q.is_using_item && q.is_sneaking" }
+                    ]
+                },
+                "shooting": {
+                    "on_entry": [
+                        // Get the timestamp the cooldown will be reached
+                        "v.grapplng_hook_reached_cooldown_ts = q.life_time + v.grappling_hook_cooldown;",
+
+                        // Remove existing grappling hooks
+                        "/scoreboard players operation Removal_Player_ID Grappling_Hook = @s Player_ID",
+                        "/function mechanics/grappling_hook/remove_with_existing_id",
+
+                        // Initialize and shoot grappling hook projectile
+                        "/scoreboard players operation Player_ID Grappling_Hook = @s Player_ID",
+                        
+                        "/playsound crossbow.shoot @s ~ ~ ~",
+                        "@s 20w14s:on_shoot_grappling_hook"
+                    ],
+                    "transitions": [
+                        { "cooldown": "1.0" }
+                    ]
+                },
+                "cooldown": {
+                    "transitions": [
+                        { "default": "q.life_time >= v.grapplng_hook_reached_cooldown_ts" },
+                        { "cancel_shot": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:grappling_hook') && q.is_sneaking" }
+                    ]
+                },
+                "cancel_shot": {
+                    "on_entry": [
+                        "/scoreboard players operation Removal_Player_ID Grappling_Hook = @s Player_ID",
+                        "/function mechanics/grappling_hook/remove_with_existing_id"
+                    ],
+                    "transitions": [
+                        { "default": "q.life_time >= v.grapplng_hook_reached_cooldown_ts" },
+                        { "cooldown": "q.life_time < v.grapplng_hook_reached_cooldown_ts" }
+                    ]
+                }
+            }
+        },
+
+        // Initializes all grappling hook entities
+        "controller.animation.grappling_hook.init": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "init": "q.is_powered" }
+                    ]
+                },
+                "init": {
+                    "on_entry": [
+                        "/tag @s add Initialized",
+                        "/scoreboard players operation @s Grapple_Plyr_ID = Player_ID Grappling_Hook",
+
+                        "@s 20w14s:reset_init"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                }
+            }
+        },
+
+        // Runs on the hook entity
+        "controller.animation.grappling_hook.detect_hit": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "hit": "q.is_stunned" }
+                    ]
+                },
+                "hit": {
+                    "on_entry": [
+                        "/execute @s ~ ~ ~ function mechanics/grappling_hook/start_retracting",
+                        "@s 20w14s:reset_retracting"
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                }
+            }
+        }
+    }
+}

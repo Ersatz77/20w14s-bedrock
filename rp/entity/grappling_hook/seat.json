@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "20w14s:grappling_hook_seat",
+            "geometry": {
+                "default": "geometry.dummy_no_lead"
+            },
+            "textures": {
+                "default": "textures/entity/invisible"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "render_controllers": [
+                "controller.render.dummy"
+            ]
+        }
+    }
+}

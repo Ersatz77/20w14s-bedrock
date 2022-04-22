@@ -1,0 +1,35 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "20w14s:melon_seed",
+            "geometry": {
+                "default": "geometry.generic_projectile"
+            },
+            "textures": {
+                "default": "textures/entity/projectiles/melon_seed"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "particle_effects": {
+                "shoot_particle": "20w14s:melon_seed_shoot"
+            },
+            "animations": {
+                "face_camera": "animation.generic_projectile.face_camera",
+                "shoot_particle": "animation.generic_projectile.shoot_particle",
+                "display": "animation.melon_seed.display"
+            },
+            "scripts": {
+                "animate": [
+                    "face_camera",
+                    "shoot_particle",
+                    "display"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.generic_projectile"
+            ]
+        }
+    }
+}

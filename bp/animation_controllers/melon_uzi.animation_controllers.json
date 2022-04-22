@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.melon_uzi.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "shooting": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:melon_uzi') && q.is_using_item" }
+                    ]
+                },
+                "shooting": {
+                    "on_entry": [
+                        "v.melon_uzi_cooldown = q.life_time + 0.25;",
+
+                        "/execute @s ~ ~ ~ playsound 20w14s.melon_uzi.shoot @a ~ ~ ~ 2",
+                        "@s 20w14s:on_shoot_melon_uzi"
+                    ],
+                    "transitions": [
+                        { "default": "q.life_time >= v.melon_uzi_cooldown" }
+                    ]
+                }
+            }
+        }
+    }
+}

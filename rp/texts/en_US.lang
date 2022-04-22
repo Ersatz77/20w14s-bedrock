@@ -1,0 +1,12 @@
+pack.name=20w14s RP
+pack.description=20w14s RP
+
+entity.20w14s:grappling_hook.name=20w14s:grappling_hook
+entity.20w14s:grappling_hook_dummy.name=20w14s:grappling_hook_dummy
+entity.20w14s:grappling_hook_seat.name=20w14s:grappling_hook_seat
+
+item.20w14s:melon_uzi.name=Melon Uzi
+item.20w14s:grappling_hook.name=Grappling Hook
+item.20w14s:laser_pointer.name=Laser Pointer
+
+action.hint.exit.20w14s:grappling_hook_seat=Sneak to exit
