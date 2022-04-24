@@ -2,11 +2,11 @@
     "format_version": "1.10.0",
     "minecraft:item": {
         "description": {
-            "identifier": "20w14s:melon_uzi",
+            "identifier": "20w14s:sunblock",
             "category": "Equipment"
         },
         "components": {
-            "minecraft:icon": "melon_uzi",
+            "minecraft:icon": "sunblock",
             "minecraft:use_animation": "none",
             "minecraft:render_offsets": "tools"
         }

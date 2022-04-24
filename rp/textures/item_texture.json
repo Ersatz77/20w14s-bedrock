@@ -7,6 +7,9 @@
         },
         "grappling_hook": {
             "textures": "textures/items/crossbow_standby"
+        },
+        "sunblock": {
+            "textures": "textures/items/sunblock"
         }
     }
 }

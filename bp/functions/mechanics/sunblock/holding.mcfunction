@@ -1,0 +1,1 @@
+effect @s[hasitem={item=20w14s:sunblock,location=slot.weapon.mainhand}] fire_resistance 1 1 true

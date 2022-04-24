@@ -7,11 +7,12 @@
             "is_summonable": false,
             "is_experimental": false,
             "animations": {
-                "dash": "controller.animation.dash",
-                "hurt_by_phantom": "controller.animation.hurt_by_phantom",
-                "melon_uzi": "controller.animation.melon_uzi.use",
-                "grappling_hook": "controller.animation.grappling_hook.use",
-                "laser_pointer": "controller.animation.laser_pointer.use",
+                "dash_controller": "controller.animation.dash",
+                "hurt_by_phantom_controller": "controller.animation.hurt_by_phantom",
+                "melon_uzi_controller": "controller.animation.melon_uzi.use",
+                "grappling_hook_controller": "controller.animation.grappling_hook.use",
+                "laser_pointer_controller": "controller.animation.laser_pointer.use",
+                "sunblock_controller": "controller.animation.sunblock.use",
                 "running_shoes_controller": "controller.animation.running_shoes",
                 "running_level_1": "animation.running_shoes.level_1",
                 "running_level_2": "animation.running_shoes.level_2",
@@ -21,11 +22,12 @@
             },
             "scripts": {
                 "animate": [
-                    "dash",
-                    "hurt_by_phantom",
-                    "melon_uzi",
-                    "grappling_hook",
-                    "laser_pointer",
+                    "dash_controller",
+                    "hurt_by_phantom_controller",
+                    "melon_uzi_controller",
+                    "grappling_hook_controller",
+                    "laser_pointer_controller",
+                    "sunblock_controller",
                     "running_shoes_controller"
                 ]
             }

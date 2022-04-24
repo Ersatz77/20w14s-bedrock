@@ -11,5 +11,12 @@ execute @s[tag=!Has_Setup] ~ ~ ~ function utility/id/generate_1
 scoreboard players operation @s[tag=!Has_Setup] Player_ID = Current_1 ID
 tag @s add Has_Setup
 
+# ---------------------------------------------------------------
 # Mechanics
+# ---------------------------------------------------------------
+
+# Grappling hook
 function mechanics/grappling_hook/teleport_dummy_to_player
+
+# Sunblock
+function mechanics/sunblock/holding

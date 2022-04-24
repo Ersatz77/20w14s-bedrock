@@ -1,0 +1,39 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.sunblock.use": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "using": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:sunblock') && q.is_using_item" }
+                    ]
+                },
+                "using": {
+                    "on_entry": [
+                        "v.sunblock_reached_cooldown_ts = q.life_time + 10;",
+                        "/function mechanics/sunblock/use"
+                    ],
+                    "transitions": [
+                        { "cooldown": "1.0" }
+                    ]
+                },
+                "cooldown": {
+                    "transitions": [
+                        { "default": "q.life_time >= v.sunblock_reached_cooldown_ts" },
+                        { "try_use_during_cooldown": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:sunblock') && q.is_using_item" }
+                    ]
+                },
+                "try_use_during_cooldown": {
+                    "on_entry": [
+                        "/titleraw @s actionbar {\"rawtext\":[{\"text\":\"§cThis item isn't ready yet!\"}]}"
+                    ],
+                    "transitions": [
+                        { "default": "q.life_time >= v.sunblock_reached_cooldown_ts" },
+                        { "cooldown": "q.life_time < v.sunblock_reached_cooldown_ts" }
+                    ]
+                }
+            }
+        }
+    }
+}

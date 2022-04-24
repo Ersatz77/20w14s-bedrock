@@ -8,5 +8,6 @@ entity.20w14s:grappling_hook_seat.name=20w14s:grappling_hook_seat
 item.20w14s:melon_uzi.name=Melon Uzi
 item.20w14s:grappling_hook.name=Grappling Hook
 item.20w14s:laser_pointer.name=Laser Pointer
+item.20w14s:sunblock.name=Sunblock
 
 action.hint.exit.20w14s:grappling_hook_seat=Sneak to exit

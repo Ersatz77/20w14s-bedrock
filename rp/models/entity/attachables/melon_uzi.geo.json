@@ -24,12 +24,12 @@
 				{
 					"name": "root_y",
 					"parent": "root_x",
-					"pivot": [0, 0, 0]
+					"pivot": [0, 8, 0]
 				},
 				{
 					"name": "root_z",
 					"parent": "root_y",
-					"pivot": [0, 0, 0]
+					"pivot": [0, 8, 0]
 				},
 				{
 					"name": "gun",

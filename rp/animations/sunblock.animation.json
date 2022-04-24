@@ -1,0 +1,189 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.sunblock.thirdperson_main_hand": {
+            "loop": true,
+            "bones": {
+                "root_x": {
+                    "rotation": [
+                        -0,
+                        0,
+                        0
+                    ],
+                    "scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                "root_y": {
+                    "rotation": [
+                        0,
+                        64.75,
+                        0
+                    ]
+                },
+                "root_z": {
+                    "rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "root": {
+                    "rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "position": [
+                        0,
+                        13,
+                        -3
+                    ]
+                }
+            }
+        },
+        "animation.sunblock.thirdperson_off_hand": {
+            "loop": true,
+            "bones": {
+                "root_x": {
+                    "rotation": [
+                        -0,
+                        0,
+                        0
+                    ],
+                    "scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                "root_y": {
+                    "rotation": [
+                        0,
+                        -105,
+                        0
+                    ]
+                },
+                "root_z": {
+                    "rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "root": {
+                    "rotation": [
+                        90,
+                        0,
+                        0
+                    ],
+                    "position": [
+                        0,
+                        13,
+                        -3
+                    ]
+                }
+            }
+        },
+        "animation.sunblock.firstperson_main_hand": {
+            "loop": true,
+            "bones": {
+                "root": {
+                    "rotation": [
+                        90,
+                        60,
+                        -40
+                    ],
+                    "position": [
+                        4,
+                        10,
+                        4
+                    ],
+                    "scale": 1.5
+                },
+                "root_x": {
+                    "position": [
+                        -3,
+                        1.75,
+                        -0
+                    ],
+                    "rotation": [
+                        -0,
+                        0,
+                        0
+                    ],
+                    "scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                "root_y": {
+                    "rotation": [
+                        0,
+                        -97.25,
+                        0
+                    ]
+                },
+                "root_z": {
+                    "rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            }
+        },
+        "animation.sunblock.firstperson_off_hand": {
+            "loop": true,
+            "bones": {
+                "root": {
+                    "rotation": [
+                        90,
+                        60,
+                        -40
+                    ],
+                    "position": [
+                        4,
+                        10,
+                        4
+                    ],
+                    "scale": 1.5
+                },
+                "root_x": {
+                    "position": [
+                        3,
+                        1.75,
+                        -0
+                    ],
+                    "rotation": [
+                        -0,
+                        0,
+                        0
+                    ],
+                    "scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                },
+                "root_y": {
+                    "rotation": [
+                        0,
+                        83,
+                        0
+                    ]
+                },
+                "root_z": {
+                    "rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            }
+        }
+    }
+}
