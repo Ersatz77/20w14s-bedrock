@@ -1,0 +1,11 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "20w14s:loot_bag.blue_shinies",
+            "spawn_egg": {
+                "texture": "loot_bag"
+            }
+        }
+    }
+}

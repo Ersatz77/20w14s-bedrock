@@ -1,0 +1,17 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 4,
+                "max": 8
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/bomb_in_a_bag.json"
+                }
+            ]
+        }
+    ]
+}

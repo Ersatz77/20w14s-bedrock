@@ -1,0 +1,19 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "20w14s:loot_bag.end_city_treasure"
+        },
+        "components": {
+            "minecraft:hand_equipped": true,
+            "minecraft:stacked_by_data": true,
+            "minecraft:max_stack_size": 16,
+            "minecraft:use_duration": 2147483647,
+            "minecraft:food": {
+                "nutrition": 0,
+                "saturation_modifier": "low",
+                "can_always_eat": true
+            }
+        }
+    }
+}

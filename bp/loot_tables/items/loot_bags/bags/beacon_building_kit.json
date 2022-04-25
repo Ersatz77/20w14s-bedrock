@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "20w14s:loot_bag.beacon_building_kit",
+                    "functions": [
+                        {
+                            "function": "set_name",
+                            "name": "§bBeacon Building Kit"
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§dLegendary ⭐⭐⭐⭐⭐"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

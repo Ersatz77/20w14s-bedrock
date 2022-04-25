@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "20w14s:loot_bag.the_deli",
+                    "functions": [
+                        {
+                            "function": "set_name",
+                            "name": "§4The Deli"
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§7Common ⭐"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:beacon"
+                }
+            ]
+        },
+        {
+            "rolls": 9,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 500,
+                    "name": "minecraft:iron_block"
+                },
+                {
+                    "type": "item",
+                    "weight": 300,
+                    "name": "minecraft:gold_block"
+                },
+                {
+                    "type": "item",
+                    "weight": 180,
+                    "name": "minecraft:emerald_block"
+                },
+                {
+                    "type": "item",
+                    "weight": 19,
+                    "name": "minecraft:diamond_block"
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:netherite_block"
+                }
+            ]
+        }
+    ]
+}

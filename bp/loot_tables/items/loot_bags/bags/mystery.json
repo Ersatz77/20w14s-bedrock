@@ -1,0 +1,29 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:spawn_egg",
+                    "functions": [
+                        {
+                            "function": "set_actor_id",
+                            "id": "20w14s:loot_bag.mystery"
+                        },
+                        {
+                            "function": "set_name",
+                            "name": "§8M§8§ky§r§8st§8§ke§r§8r§8§kiou§r§8s L§8§koo§r§8t B§8§ka§r§8g"
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§8§kLegendary§r§8 ⭐§k⭐⭐§r§8⭐§k⭐§r§8⭐"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

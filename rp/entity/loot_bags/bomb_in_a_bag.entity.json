@@ -1,0 +1,11 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "20w14s:loot_bag.bomb_in_a_bag",
+            "spawn_egg": {
+                "texture": "loot_bag"
+            }
+        }
+    }
+}

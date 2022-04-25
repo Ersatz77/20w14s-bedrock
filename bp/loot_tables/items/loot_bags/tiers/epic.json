@@ -1,0 +1,38 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/book_bag_4.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/end_city_treasure.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/wither_prep_kit.json"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 4,
+                    "name": "loot_tables/items/loot_bags/bags/mystery.json"
+                },
+                {
+                    "type": "empty",
+                    "weight": 96
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 2,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:emerald"
+                },
+                {
+                    "type": "item",
+                    "weight": 3,
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": {
+                                "min": 0,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 3,
+                    "name": "minecraft:mushroom_stew"
+                },
+                {
+                    "type": "item",
+                    "weight": 3,
+                    "name": "minecraft:beetroot_soup"
+                },
+                {
+                    "type": "item",
+                    "weight": 2,
+                    "name": "minecraft:rabbit_stew"
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:bowl"
+                },
+                {
+                    "type": "item",
+                    "weight": 2,
+                    "name": "minecraft:stick",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

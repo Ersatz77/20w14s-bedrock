@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "20w14s:loot_bag.bag_o_balls",
+            "category": "Items"
+        },
+        "components": {
+            "minecraft:icon": "loot_bag",
+            "minecraft:use_animation": "none",
+            "minecraft:render_offsets": "tools"
+        }
+    }
+}

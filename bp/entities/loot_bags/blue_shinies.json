@@ -1,0 +1,91 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "20w14s:loot_bag.blue_shinies",
+            "is_summonable": true,
+            "is_spawnable": true,
+            "is_experimental": false,
+            "animations": {
+                "drop_controller": "controller.animation.loot_bags.blue_shinies"
+            },
+            "scripts": {
+                "animate": [
+                    "drop_controller"
+                ]
+            }
+        },
+        "component_groups": {
+            "20w14s:spawn_creepers": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "time": 0,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "20w14s:remove",
+                        "target": "self"
+                    }
+                }
+            },
+            "20w14s:drop_diamonds": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 0,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "20w14s:remove",
+                        "target": "self"
+                    }
+                }
+            },
+            "20w14s:remove": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "loot_bag"
+                ]
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "randomize": [
+                    {
+                        "weight": 90,
+                        "add": {
+                            "component_groups": [
+                                "20w14s:spawn_creepers"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 10,
+                        "add": {
+                            "component_groups": [
+                                "20w14s:drop_diamonds"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

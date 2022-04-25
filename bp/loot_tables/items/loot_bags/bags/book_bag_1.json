@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "20w14s:loot_bag.book_bag_1",
+                    "functions": [
+                        {
+                            "function": "set_name",
+                            "name": "§eBook Bag I"
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§7Common ⭐"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

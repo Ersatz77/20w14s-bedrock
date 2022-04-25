@@ -1,0 +1,42 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/loot/enchanted_books/tier_3.json"
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 1,
+                "max": 4
+            },
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 67,
+                    "name": "loot_tables/items/loot_bags/loot/enchanted_books/junk.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 11,
+                    "name": "loot_tables/items/loot_bags/loot/enchanted_books/tier_1.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 11,
+                    "name": "loot_tables/items/loot_bags/loot/enchanted_books/tier_2.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 11,
+                    "name": "loot_tables/items/loot_bags/loot/enchanted_books/tier_3.json"
+                }
+            ]
+        }
+    ]
+}

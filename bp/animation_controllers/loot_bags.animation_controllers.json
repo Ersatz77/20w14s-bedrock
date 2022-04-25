@@ -1,0 +1,284 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.loot_bags.open": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "bag_o_balls": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.bag_o_balls') && q.is_using_item" },
+                        { "bag_of_bomb_in_a_bags": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.bag_of_bomb_in_a_bags') && q.is_using_item" },
+                        { "beacon_building_kit": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.beacon_building_kit') && q.is_using_item" },
+                        { "book_bag_1": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.book_bag_1') && q.is_using_item" },
+                        { "book_bag_2": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.book_bag_2') && q.is_using_item" },
+                        { "book_bag_3": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.book_bag_3') && q.is_using_item" },
+                        { "book_bag_4": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.book_bag_4') && q.is_using_item" },
+                        { "book_bag_5": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.book_bag_5') && q.is_using_item" },
+                        { "end_city_treasure": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.end_city_treasure') && q.is_using_item" },
+                        { "grannys_oven": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.grannys_oven') && q.is_using_item" },
+                        { "nether_portal_construction_kit": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.nether_portal_construction_kit') && q.is_using_item" },
+                        { "ocean_monument_raiding_kit": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.ocean_monument_raiding_kit') && q.is_using_item" },
+                        { "pearl_pouch": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.pearl_pouch') && q.is_using_item" },
+                        { "shipwreck_treasure": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.shipwreck_treasure') && q.is_using_item" },
+                        { "simple_dungeon": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.simple_dungeon') && q.is_using_item" },
+                        { "soup_kitchen": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.soup_kitchen') && q.is_using_item" },
+                        { "stronghold_crossing": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.stronghold_crossing') && q.is_using_item" },
+                        { "stronghold_search_kit": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.stronghold_search_kit') && q.is_using_item" },
+                        { "sushi_bar": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.sushi_bar') && q.is_using_item" },
+                        { "the_deli": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.the_deli') && q.is_using_item" },
+                        { "veggie_tray": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.veggie_tray') && q.is_using_item" },
+                        { "wither_prep_kit": "q.is_item_name_any('slot.weapon.mainhand', '20w14s:loot_bag.wither_prep_kit') && q.is_using_item" }
+                    ]
+                },
+                "bag_o_balls": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.bag_o_balls 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/bag_o_balls\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "bag_of_bomb_in_a_bags": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.bag_of_bomb_in_a_bags 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/bag_of_bomb_in_a_bags\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "beacon_building_kit": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.beacon_building_kit 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/beacon_building_kit\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "book_bag_1": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.book_bag_1 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/book_bag_1\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "book_bag_2": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.book_bag_2 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/book_bag_2\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "book_bag_3": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.book_bag_3 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/book_bag_3\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "book_bag_4": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.book_bag_4 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/book_bag_4\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "book_bag_5": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.book_bag_5 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/book_bag_5\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "end_city_treasure": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.end_city_treasure 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/end_city_treasure\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "grannys_oven": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.grannys_oven 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/grannys_oven\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "nether_portal_construction_kit": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.nether_portal_construction_kit 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/nether_portal_construction_kit\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "ocean_monument_raiding_kit": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.ocean_monument_raiding_kit 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/ocean_monument_raiding_kit\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "pearl_pouch": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.pearl_pouch 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/pearl_pouch\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "shipwreck_treasure": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.shipwreck_treasure 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/shipwreck_treasure\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "simple_dungeon": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.simple_dungeon 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/simple_dungeon\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "soup_kitchen": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.soup_kitchen 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/soup_kitchen\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "stronghold_crossing": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.stronghold_crossing 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/stronghold_crossing\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "stronghold_search_kit": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.stronghold_search_kit 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/stronghold_search_kit\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "sushi_bar": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.sushi_bar 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/sushi_bar\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "the_deli": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.the_deli 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/the_deli\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "veggie_tray": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.veggie_tray 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/veggie_tray\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                },
+                "wither_prep_kit": {
+                    "on_entry": [
+                        "/clear @s 20w14s:loot_bag.wither_prep_kit 0 1",
+                        "/loot give @s loot \"items/loot_bags/loot/wither_prep_kit\""
+                    ],
+                    "transitions": [
+                        { "default": "1.0" }
+                    ]
+                }
+            }
+        },
+
+        "controller.animation.loot_bags.blue_shinies": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "boom": "q.variant == 0" },
+                        { "diamonds": "q.variant == 1" }
+                    ]
+                },
+                "boom": {
+                    "on_entry": [
+                        "/playsound random.fuse @a ~ ~ ~ 2.0 1.5",
+                        "/playsound random.fuse @a ~ ~ ~ 2.0 1.5",
+
+                        "/summon minecraft:creeper ~ ~ ~ minecraft:become_charged",
+                        "/summon minecraft:creeper ~ ~ ~ minecraft:become_charged",
+
+                        "/effect @e[type=minecraft:creeper,r=1,c=2] speed 60 2",
+                        "/effect @e[type=minecraft:creeper,r=1,c=2] jump_boost 60 2"
+                    ]
+                },
+                "diamonds": {
+                    "on_entry": [
+                        "/loot spawn ~ ~ ~ loot \"items/loot_bags/loot/blue_shinies\"",
+                        "/loot spawn ~ ~ ~ loot \"items/loot_bags/bags/blue_shinies\""
+                    ]
+                }
+            }
+        },
+
+        "controller.animation.loot_bags.mystery": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "spawn_cactus": "q.is_powered" }
+                    ]
+                },
+                "spawn_cactus": {
+                    "on_entry": [
+                        "/fill ~ ~ ~ ~ ~ ~ minecraft:sand 0 replace minecraft:air -1",
+                        "/fill ~ ~1 ~ ~ ~1 ~ minecraft:cactus 0 replace minecraft:air -1",
+
+                        // TODO: Add a loot table override so it drops a written book
+                        "/summon minecraft:sheep ~ ~2 ~"
+                    ]
+                }
+            }
+        }
+    }
+}

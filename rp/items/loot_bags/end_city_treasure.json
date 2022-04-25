@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:item": {
+        "description": {
+            "identifier": "20w14s:loot_bag.end_city_treasure",
+            "category": "Items"
+        },
+        "components": {
+            "minecraft:icon": "loot_bag",
+            "minecraft:use_animation": "none",
+            "minecraft:render_offsets": "tools"
+        }
+    }
+}

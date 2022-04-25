@@ -18,7 +18,8 @@
                 "running_level_2": "animation.running_shoes.level_2",
                 "running_level_3": "animation.running_shoes.level_3",
                 "running_level_4": "animation.running_shoes.level_4",
-                "running_level_5": "animation.running_shoes.level_5"
+                "running_level_5": "animation.running_shoes.level_5",
+                "loot_bag_controller": "controller.animation.loot_bags.open"
             },
             "scripts": {
                 "animate": [
@@ -28,7 +29,8 @@
                     "grappling_hook_controller",
                     "laser_pointer_controller",
                     "sunblock_controller",
-                    "running_shoes_controller"
+                    "running_shoes_controller",
+                    "loot_bag_controller"
                 ]
             }
         },

@@ -1,0 +1,48 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/book_bag_3.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/shipwreck_treasure.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/stronghold_search_kit.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/nether_portal_construction_kit.json"
+                },
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "loot_tables/items/loot_bags/bags/ocean_monument_raiding_kit.json"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 3,
+                    "name": "loot_tables/items/loot_bags/bags/mystery.json"
+                },
+                {
+                    "type": "empty",
+                    "weight": 97
+                }
+            ]
+        }
+    ]
+}

@@ -10,6 +10,9 @@
         },
         "sunblock": {
             "textures": "textures/items/sunblock"
+        },
+        "loot_bag": {
+            "textures": "textures/items/loot_bag"
         }
     }
 }

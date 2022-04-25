@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "20w14s:loot_bag.stronghold_crossing",
+                    "functions": [
+                        {
+                            "function": "set_name",
+                            "name": "§7Stronghold Crossing"
+                        },
+                        {
+                            "function": "set_lore",
+                            "lore": [
+                                "§7Common ⭐"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

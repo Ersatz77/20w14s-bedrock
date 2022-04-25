@@ -1,0 +1,46 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "20w14s:loot_bag.bomb_in_a_bag",
+            "is_summonable": true,
+            "is_spawnable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "20w14s:transform_to_tnt": {
+                "minecraft:transformation": {
+                    "into": "minecraft:tnt<minecraft:explode>"
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family":{
+                "family": [
+                    "loot_bag"
+                ]
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "20w14s:transform_to_tnt"
+                    ]
+                }
+            }
+        }
+    }
+}
