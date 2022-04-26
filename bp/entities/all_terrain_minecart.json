@@ -1,0 +1,86 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "20w14s:all_terrain_minecart",
+            "is_summonable": true,
+            "is_spawnable": true,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "all_terrain_minecart",
+                    "inanimate"
+                ]
+            },
+            "minecraft:collision_box": {
+                "height": 0.98,
+                "width": 0.7
+            },
+            "minecraft:health": {
+                "value": 6,
+                "max": 0
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "fall",
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1.0
+            },
+            "minecraft:movement": {
+                "value": 0.4
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:navigation.generic": {},
+            "minecraft:jump.static": {},
+            "minecraft:buoyant": {
+                "base_buoyancy": 1.0,
+                "apply_gravity": true,
+                "simulate_waves": true,
+                "big_wave_probability": 0.03,
+                "big_wave_speed": 10,
+                "liquid_blocks": [
+                    "minecraft:water",
+                    "minecraft:flowing_water"
+                ]
+                
+            },
+            "minecraft:can_power_jump": {},
+            "minecraft:horse.jump_strength": {
+                "value": 1.0
+            },
+            "minecraft:input_ground_controlled": {},
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "controlling_seat": 0,
+                "crouching_skip_interact": false,
+                "pull_in_entities": false,
+                "rider_can_interact": true,
+                "interact_text": "action.interact.ride.minecart",
+                "family_types": [
+                    "player"
+                ],
+                "seats": [
+                    {
+                        "position": [
+                            0,
+                            -0.1,
+                            0
+                        ]
+                    }
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            }
+        }
+    }
+}

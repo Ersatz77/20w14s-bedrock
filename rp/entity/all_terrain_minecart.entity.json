@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "20w14s:all_terrain_minecart",
+            "geometry": {
+                "default": "geometry.all_terrain_minecart"
+            },
+            "textures": {
+                "default": "textures/entity/minecart"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "animations": {
+                "setup": "animation.all_terrain_minecart.setup",
+                "tilt": "animation.all_terrain_minecart.tilt"
+            },
+            "scripts": {
+                "animate": [
+                    "setup",
+                    "tilt"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.all_terrain_minecart"
+            ],
+            "spawn_egg": {
+                "texture": "minecart_normal"
+            }
+        }
+    }
+}

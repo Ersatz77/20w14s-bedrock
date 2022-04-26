@@ -1,0 +1,31 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.all_terrain_minecart.setup": {
+            "animation_length": 0.05,
+            "loop": true,
+            "bones": {
+                "geo": {
+                    "rotation": [
+                        0,
+                        90,
+                        0
+                    ]
+                }
+            }
+        },
+        "animation.all_terrain_minecart.tilt": {
+            "loop": true,
+            "animation_length": 0.05,
+            "bones": {
+                "root": {
+                    "rotation": [
+                        "math.clamp(45, -45, q.vertical_speed * -3)",
+                        0,
+                        0
+                    ]
+                }
+            }
+        }
+    }
+}
