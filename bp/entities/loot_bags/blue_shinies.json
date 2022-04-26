@@ -85,6 +85,13 @@
                         }
                     }
                 ]
+            },
+            "20w14s:remove": {
+                "add": {
+                    "component_groups": [
+                        "20w14s:remove"
+                    ]
+                }
             }
         }
     }
